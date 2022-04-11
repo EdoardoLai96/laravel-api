@@ -15,10 +15,11 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-
     
     {
-        $posts = Post::all();
+        //chiamo con with per far risolvere a laravel la relazione tra post e category in fase di chiamata axios
+
+        $posts = Post::with(['category'])->get();
         
         return response()->json(
             [

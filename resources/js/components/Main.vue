@@ -1,13 +1,13 @@
 <template>
     <div class="container">
+            <h1>Elenco dei Post</h1>
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h1>Elenco dei Post</h1>
+            <div v-for="post in posts" :key="post.id" class="col">
                 <div class="card">
-                    <div class="card-header">Componente Main</div>
-
+                    <div class="card-header">{{post.title}}</div>
                     <div class="card-body">
-                        Main
+                        {{post.content}}
+                        <a class="btn btn-primary" href="#">Vedi Post</a>
                     </div>
                 </div>
             </div>
@@ -27,15 +27,18 @@
                
            }
        },
-       methods(){
+       methods: {
            getPosts(){
-            //    Tutte le rotte che sono dentro api.php iniziano per /api 
+            // Tutte le rotte che sono dentro api.php iniziano per /api 
             axios.get('/api/posts')
             .then((response) => {
                 // handle success
-                console.log(response);
+                this.posts = response.data.results;
             });
            }
        },
+       mounted(){
+           this.getPosts();
+       }
     };
 </script>

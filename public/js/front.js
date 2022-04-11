@@ -1904,9 +1904,50 @@ module.exports = {
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Main.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/edoardo/Desktop/Laravel/laravel-api/resources/js/components/Main.vue: Missing semicolon. (31:17)\n\n\u001b[0m \u001b[90m 29 |\u001b[39m    }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 30 |\u001b[39m    methods(){\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m        getPosts(){\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m         \u001b[90m//    Tutte le rotte che sono dentro api.php iniziano per /api \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 33 |\u001b[39m         axios\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m'/api/posts'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m         \u001b[33m.\u001b[39mthen((response) \u001b[33m=>\u001b[39m {\u001b[0m\n    at instantiate (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:72:32)\n    at constructor (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:358:12)\n    at Parser.raise (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:3334:19)\n    at Parser.semicolon (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:3995:10)\n    at Parser.parseExpressionStatement (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15125:10)\n    at Parser.parseStatementContent (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:14676:19)\n    at Parser.parseStatement (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15167:25)\n    at Parser.parseBlockBody (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15158:10)\n    at Parser.parseBlock (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15142:10)\n    at Parser.parseFunctionBody (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:13836:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:13820:10)\n    at Parser.parseMethod (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:13770:10)\n    at Parser.parseObjectMethod (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:13646:19)\n    at Parser.parseObjPropValue (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:13687:23)\n    at Parser.parsePropertyDefinition (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:13604:10)\n    at Parser.parseObjectLike (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:13494:21)\n    at Parser.parseExprAtom (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12889:23)\n    at Parser.parseExprSubscripts (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12539:23)\n    at Parser.parseUpdate (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12518:21)\n    at Parser.parseMaybeUnary (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12489:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12283:61)\n    at Parser.parseExprOps (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12290:23)\n    at Parser.parseMaybeConditional (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12260:23)\n    at Parser.parseMaybeAssign (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12213:21)\n    at /Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12171:39\n    at Parser.allowInAnd (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:14231:16)\n    at Parser.parseMaybeAssignAllowIn (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:12171:17)\n    at Parser.parseExportDefaultExpression (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15898:22)\n    at Parser.parseExport (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15786:31)\n    at Parser.parseStatementContent (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:14644:27)\n    at Parser.parseStatement (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:14528:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15167:25)\n    at Parser.parseBlockBody (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:15158:10)\n    at Parser.parseProgram (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:14446:10)\n    at Parser.parseTopLevel (/Users/edoardo/Desktop/Laravel/laravel-api/node_modules/@babel/parser/lib/index.js:14433:25)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Main',
+  components: {},
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
+  methods: {
+    getPosts: function getPosts() {
+      var _this = this;
+
+      // Tutte le rotte che sono dentro api.php iniziano per /api 
+      axios.get('/api/posts').then(function (response) {
+        // handle success
+        _this.posts = response.data.results;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getPosts();
+  }
+});
 
 /***/ }),
 
@@ -2417,32 +2458,39 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("h1", [_vm._v("Elenco dei Post")]),
-          _vm._v(" "),
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("Elenco dei Post")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row justify-content-center" },
+      _vm._l(_vm.posts, function (post) {
+        return _c("div", { key: post.id, staticClass: "col" }, [
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
-              _vm._v("Componente Main"),
+              _vm._v(_vm._s(post.title)),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _vm._v("\n                    Main\n                "),
+              _vm._v(
+                "\n                    " +
+                  _vm._s(post.content) +
+                  "\n                    "
+              ),
+              _c(
+                "a",
+                { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                [_vm._v("Vedi Post")]
+              ),
             ]),
           ]),
-        ]),
-      ]),
-    ])
-  },
-]
+        ])
+      }),
+      0
+    ),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

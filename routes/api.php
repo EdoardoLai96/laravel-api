@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/post','Api\PostContollerr@index');
+Route::get('/posts','Api\PostController@index');

@@ -19,7 +19,8 @@ class PostController extends Controller
     {
         //chiamo con with per far risolvere a laravel la relazione tra post e category in fase di chiamata axios
 
-        $posts = Post::with(['category'])->get();
+        $posts = Post::with(['category'])->paginate(2);
+
         
         return response()->json(
             [

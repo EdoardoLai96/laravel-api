@@ -1,13 +1,19 @@
 <template>
     <div class="container">
             <h1>Elenco dei Post</h1>
+            <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item" :class="(currentPage == 1) ? 'disabled' : '' " ><span @click="getPosts(currentPage --)" class="page-link" >Previous</span></li>
+                <li class="page-item" :class="(currentPage == lastPage) ? 'disabled' : '' "><span @click="getPosts(currentPage ++)" class="page-link">Next</span></li>
+            </ul>
+            </nav>
         <div class="row justify-content-center">
-            <div v-for="post in posts" :key="post.id" class="col">
+            <div v-for="post in posts" :key="post.id" class="col-3">
                 <div class="card">
-                    <div class="card-header">{{post.title}}</div>
                     <div class="card-body">
-                        {{post.content}}
-                        <a class="btn btn-primary" href="#">Vedi Post</a>
+                    <h5 class="card-title">{{post.title}}</h5>
+                        <p class="card-text text-truncate">{{post.content}}</p>
+                        <a class="btn btn-primary" href="#"> Vedi Post</a>
                     </div>
                 </div>
             </div>
@@ -24,21 +30,30 @@
        data() {
            return{
             posts : [],
-               
+            currentPage :  1,
+            lastPage: null
            }
        },
        methods: {
            getPosts(){
             // Tutte le rotte che sono dentro api.php iniziano per /api 
-            axios.get('/api/posts')
+            axios.get('/api/posts', {
+                'params':{
+                    'page' : this.currentPage
+                }
+            })
             .then((response) => {
                 // handle success
-                this.posts = response.data.results;
+                this.currentPage = response.data.results.current_page;
+                this.lastPage = response.data.results.last_page;
+                this.posts = response.data.results.data;
+                console.log(response.data)
             });
            }
        },
-       mounted(){
+       created(){
            this.getPosts();
+           console.log(this.getPosts)
        }
     };
 </script>

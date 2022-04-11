@@ -1925,12 +1925,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Main',
   components: {},
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      currentPage: 1,
+      lastPage: null
     };
   },
   methods: {
@@ -1938,14 +1946,22 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       // Tutte le rotte che sono dentro api.php iniziano per /api 
-      axios.get('/api/posts').then(function (response) {
+      axios.get('/api/posts', {
+        'params': {
+          'page': this.currentPage
+        }
+      }).then(function (response) {
         // handle success
-        _this.posts = response.data.results;
+        _this.currentPage = response.data.results.current_page;
+        _this.lastPage = response.data.results.last_page;
+        _this.posts = response.data.results.data;
+        console.log(response.data);
       });
     }
   },
-  mounted: function mounted() {
+  created: function created() {
     this.getPosts();
+    console.log(this.getPosts);
   }
 });
 
@@ -2461,26 +2477,73 @@ var render = function () {
   return _c("div", { staticClass: "container" }, [
     _c("h1", [_vm._v("Elenco dei Post")]),
     _vm._v(" "),
+    _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+      _c("ul", { staticClass: "pagination" }, [
+        _c(
+          "li",
+          {
+            staticClass: "page-item",
+            class: _vm.currentPage == 1 ? "disabled" : "",
+          },
+          [
+            _c(
+              "span",
+              {
+                staticClass: "page-link",
+                on: {
+                  click: function ($event) {
+                    return _vm.getPosts(_vm.currentPage--)
+                  },
+                },
+              },
+              [_vm._v("Previous")]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          {
+            staticClass: "page-item",
+            class: _vm.currentPage == _vm.lastPage ? "disabled" : "",
+          },
+          [
+            _c(
+              "span",
+              {
+                staticClass: "page-link",
+                on: {
+                  click: function ($event) {
+                    return _vm.getPosts(_vm.currentPage++)
+                  },
+                },
+              },
+              [_vm._v("Next")]
+            ),
+          ]
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row justify-content-center" },
       _vm._l(_vm.posts, function (post) {
-        return _c("div", { key: post.id, staticClass: "col" }, [
+        return _c("div", { key: post.id, staticClass: "col-3" }, [
           _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v(_vm._s(post.title)),
-            ]),
-            _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(post.content) +
-                  "\n                    "
-              ),
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(post.title)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text text-truncate" }, [
+                _vm._v(_vm._s(post.content)),
+              ]),
+              _vm._v(" "),
               _c(
                 "a",
                 { staticClass: "btn btn-primary", attrs: { href: "#" } },
-                [_vm._v("Vedi Post")]
+                [_vm._v(" Vedi Post")]
               ),
             ]),
           ]),

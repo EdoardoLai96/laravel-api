@@ -1,22 +1,13 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Sito in Manutenzione</div>
-
-                    <div class="card-body">
-                        Torna a trovarci fdd
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <Main/>
 </template>
 
 <script>
+    import Main from "../components/Main"
     export default {
        name: 'App',
-       components: { }
+       components: { 
+           Main
+       }
     }
 </script>

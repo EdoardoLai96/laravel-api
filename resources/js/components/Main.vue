@@ -3,8 +3,8 @@
             <h1>Elenco dei Post</h1>
             <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item" :class="(currentPage == 1) ? 'disabled' : '' " ><span @click="getPosts(currentPage --)" class="page-link" >Previous</span></li>
-                <li class="page-item" :class="(currentPage == lastPage) ? 'disabled' : '' "><span @click="getPosts(currentPage ++)" class="page-link">Next</span></li>
+                <li class="page-item" :class="(currentPage == 1) ? 'disabled' : '' " ><span @click="getPosts(currentPage - 1)" class="page-link" >Previous</span></li>
+                <li class="page-item" :class="(currentPage == lastPage) ? 'disabled' : '' "><span @click="getPosts(currentPage + 1)" class="page-link">Next</span></li>
             </ul>
             </nav>
         <div class="row justify-content-center">
@@ -35,11 +35,11 @@
            }
        },
        methods: {
-           getPosts(){
+           getPosts(apiPage){
             // Tutte le rotte che sono dentro api.php iniziano per /api 
             axios.get('/api/posts', {
                 'params':{
-                    'page' : this.currentPage
+                    'page' : apiPage
                 }
             })
             .then((response) => {
@@ -52,7 +52,7 @@
            }
        },
        created(){
-           this.getPosts();
+           this.getPosts(1);
            console.log(this.getPosts)
        }
     };

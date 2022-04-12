@@ -1942,13 +1942,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    getPosts: function getPosts() {
+    getPosts: function getPosts(apiPage) {
       var _this = this;
 
       // Tutte le rotte che sono dentro api.php iniziano per /api 
       axios.get('/api/posts', {
         'params': {
-          'page': this.currentPage
+          'page': apiPage
         }
       }).then(function (response) {
         // handle success
@@ -1960,7 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    this.getPosts();
+    this.getPosts(1);
     console.log(this.getPosts);
   }
 });
@@ -2492,7 +2492,7 @@ var render = function () {
                 staticClass: "page-link",
                 on: {
                   click: function ($event) {
-                    return _vm.getPosts(_vm.currentPage--)
+                    return _vm.getPosts(_vm.currentPage - 1)
                   },
                 },
               },
@@ -2514,7 +2514,7 @@ var render = function () {
                 staticClass: "page-link",
                 on: {
                   click: function ($event) {
-                    return _vm.getPosts(_vm.currentPage++)
+                    return _vm.getPosts(_vm.currentPage + 1)
                   },
                 },
               },
